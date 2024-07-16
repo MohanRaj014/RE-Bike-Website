@@ -1,0 +1,785 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Arsenal SC", sans-serif;
+}
+
+/* NAV BAR */
+nav {
+  width: 100%;
+  padding: 15px;
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input:checked~.subnav {
+  background-color: #000000;
+  /* font-size: 40px; */
+  left: 0;
+}
+
+input {
+  display: none;
+}
+
+nav i {
+  display: none !important;
+  color: white;
+
+}
+
+.logo {
+  max-width: 225px;
+  width: auto;
+}
+
+.subnav a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.subnav {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  right: 1%;
+
+}
+
+/* SLIDESHOW IMAGES */
+
+.slideshow {
+  display: flex;
+  aspect-ratio: 15/7;
+  /* gap: 20px; */
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+
+.slideshow-img {
+  width: 100%;
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  position: relative;
+  animation: slide 25s ease 5s infinite;
+
+}
+
+@keyframes slide {
+  0% {
+    left: 0;
+  }
+
+  10%,
+  25% {
+    left: -100%;
+  }
+
+  25%,
+  35% {
+    left: -200%;
+  }
+
+  35%,
+  45% {
+    left: -300%;
+  }
+
+  45%,
+  55% {
+    left: -400%;
+  }
+
+  55%,
+  65% {
+    left: -500%;
+  }
+
+  65%,
+  75% {
+    left: -600%;
+  }
+
+  75%,
+  85% {
+    left: -700%;
+  }
+
+  85%,
+  95% {
+    left: -800%;
+  }
+
+  95%,
+  105% {
+    left: -900%;
+  }
+
+  100% {
+    left: -1000%;
+  }
+}
+
+/* IMAGE HOVER */
+
+.pic-container h1 {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  margin-top: -4px;
+}
+
+.pic-container {
+  width: 100%;
+}
+
+.picture {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* column-gap: 10px; */
+  /* padding-bottom: 50px; */
+  overflow: hidden;
+}
+
+.picture img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+/* .picture div {
+  overflow: hidden;
+  overflow-y: hidden;
+} */
+
+.picture h4 {
+  color: #fffcfc;
+  font-weight: bolder;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  position: relative;
+  bottom: 35px;
+  left: 15px;
+}
+
+.picture img:hover {
+  transform: scale(1.05);
+}
+
+.box-img {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+/* input {
+  display: none;
+} */
+
+.sec-nav {
+  width: 100%;
+  /* padding: 15px; */
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  /* position: sticky;
+  top:0; */
+  /* margin-top: -50px; */
+}
+
+.label-list {
+  display: flex;
+  width: 100%;
+  overflow-x: hidden;
+  align-items: center;
+}
+
+.label-list label[for="motorcycles"] {
+  flex-grow: 1;
+}
+
+.label-list label {
+  padding: 10px 20px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.motor{
+  font-size: 30px;
+}
+
+#shotgun:checked~.label-list label[for="shotgun"],
+#himalayan:checked~.label-list label[for="himalayan"] {
+  /* background-color: black; */
+  color: #ffffff;
+}
+
+/* #shotgun:checked~.label-list .shotgun{
+  display: block;
+} */
+
+#shotgun:checked~.hiding .himalayan,
+#shotgun:checked~.hiding .bullet,
+#shotgun:checked~.hiding .inter,
+#shotgun:checked~.hiding .continent,
+#shotgun:checked~.hiding .super_meteor,
+#shotgun:checked~.hiding .hunter,
+#shotgun:checked~.hiding .scram,
+#shotgun:checked~.hiding .classic,
+#shotgun:checked~.hiding .meteor,
+
+
+#himalayan:checked~.hiding .shotgun,
+#himalayan:checked~.hiding .bullet,
+#himalayan:checked~.hiding .inter,
+#himalayan:checked~.hiding .continent,
+#himalayan:checked~.hiding .super_meteor,
+#himalayan:checked~.hiding .hunter,
+#himalayan:checked~.hiding .scram,
+#himalayan:checked~.hiding .classic,
+#himalayan:checked~.hiding .meteor,
+
+#bullet:checked~.hiding .shotgun,
+#bullet:checked~.hiding .himalayan,
+#bullet:checked~.hiding .inter,
+#bullet:checked~.hiding .continent,
+#bullet:checked~.hiding .super_meteor,
+#bullet:checked~.hiding .hunter,
+#bullet:checked~.hiding .scram,
+#bullet:checked~.hiding .classic,
+#bullet:checked~.hiding .meteor,
+
+#inter:checked~.hiding .shotgun,
+#inter:checked~.hiding .himalayan,
+#inter:checked~.hiding .bullet,
+#inter:checked~.hiding .continent,
+#inter:checked~.hiding .super_meteor,
+#inter:checked~.hiding .hunter,
+#inter:checked~.hiding .scram,
+#inter:checked~.hiding .classic,
+#inter:checked~.hiding .meteor,
+
+#continent:checked~.hiding .shotgun,
+#continent:checked~.hiding .himalayan,
+#continent:checked~.hiding .bullet,
+#continent:checked~.hiding .inter,
+#continent:checked~.hiding .super_meteor,
+#continent:checked~.hiding .hunter,
+#continent:checked~.hiding .scram,
+#continent:checked~.hiding .classic,
+#continent:checked~.hiding .meteor,
+
+#super_meteor:checked~.hiding .shotgun,
+#super_meteor:checked~.hiding .himalayan,
+#super_meteor:checked~.hiding .bullet,
+#super_meteor:checked~.hiding .inter,
+#super_meteor:checked~.hiding .continent,
+#super_meteor:checked~.hiding .hunter,
+#super_meteor:checked~.hiding .scram,
+#super_meteor:checked~.hiding .classic,
+#super_meteor:checked~.hiding .meteor,
+
+#hunter:checked~.hiding .shotgun,
+#hunter:checked~.hiding .himalayan,
+#hunter:checked~.hiding .bullet,
+#hunter:checked~.hiding .inter,
+#hunter:checked~.hiding .continent,
+#hunter:checked~.hiding .super_meteor,
+#hunter:checked~.hiding .scram,
+#hunter:checked~.hiding .classic,
+#hunter:checked~.hiding .meteor,
+
+#scram:checked~.hiding .shotgun,
+#scram:checked~.hiding .himalayan,
+#scram:checked~.hiding .bullet,
+#scram:checked~.hiding .inter,
+#scram:checked~.hiding .continent,
+#scram:checked~.hiding .super_meteor,
+#scram:checked~.hiding .hunter,
+#scram:checked~.hiding .classic,
+#scram:checked~.hiding .meteor,
+
+#classic:checked~.hiding .shotgun,
+#classic:checked~.hiding .himalayan,
+#classic:checked~.hiding .bullet,
+#classic:checked~.hiding .inter,
+#classic:checked~.hiding .continent,
+#classic:checked~.hiding .super_meteor,
+#classic:checked~.hiding .hunter,
+#classic:checked~.hiding .scram,
+#classic:checked~.hiding .meteor,
+
+#meteor:checked~.hiding .shotgun,
+#meteor:checked~.hiding .himalayan,
+#meteor:checked~.hiding .bullet,
+#meteor:checked~.hiding .inter,
+#meteor:checked~.hiding .continent,
+#meteor:checked~.hiding .super_meteor,
+#meteor:checked~.hiding .hunter,
+#meteor:checked~.hiding .scram,
+#meteor:checked~.hiding .classic {
+  display: none;
+}
+
+/* #himalayan:checked~.hiding .himalayan{
+  display: block;
+} */
+
+.hiding {
+  width: 100%;
+  /* padding: 40px; */
+}
+
+.hiding div {
+  width: 100%;
+}
+
+.hiding img {
+  width: 100%;
+  object-fit: cover;
+  /* padding: 20px; */
+}
+
+.sec-img1 {
+  width: 100%;
+}
+
+.sec-link {
+  /* display: flex;
+  gap: 40px; */
+  position: relative;
+  right: 122px;
+}
+
+.third-nav{
+  width: 100%;
+  /* padding: 15px; */
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  /* margin-top: -50px; */
+}
+
+.ride{
+  font-size: 30px;
+}
+
+#moto:checked~.hide .adventure,
+#moto:checked~.hide .gtcup,
+#moto:checked~.hide .odyssey,
+#moto:checked~.hide .rental,
+#moto:checked~.hide .tour,
+#moto:checked~.hide .trail,
+#moto:checked~.hide .track,
+#moto:checked~.hide .map,
+#moto:checked~.hide .support,
+
+#adventure:checked~.hide .moto,
+#adventure:checked~.hide .gtcup,
+#adventure:checked~.hide .odyssey,
+#adventure:checked~.hide .rental,
+#adventure:checked~.hide .tour,
+#adventure:checked~.hide .trail,
+#adventure:checked~.hide .track,
+#adventure:checked~.hide .map,
+#adventure:checked~.hide .support,
+
+
+#gtcup:checked~.hide .moto,
+#gtcup:checked~.hide .adventure,
+#gtcup:checked~.hide .odyssey,
+#gtcup:checked~.hide .rental,
+#gtcup:checked~.hide .tour,
+#gtcup:checked~.hide .trail,
+#gtcup:checked~.hide .track,
+#gtcup:checked~.hide .map,
+#gtcup:checked~.hide .support,
+
+#odyssey:checked~.hide .moto,
+#odyssey:checked~.hide .adventure,
+#odyssey:checked~.hide .gtcup,
+#odyssey:checked~.hide .rental,
+#odyssey:checked~.hide .tour,
+#odyssey:checked~.hide .trail,
+#odyssey:checked~.hide .track,
+#odyssey:checked~.hide .map,
+#odyssey:checked~.hide .support,
+
+
+#rental:checked~.hide .moto,
+#rental:checked~.hide .adventure,
+#rental:checked~.hide .gtcup,
+#rental:checked~.hide .odyssey,
+#rental:checked~.hide .tour,
+#rental:checked~.hide .trail,
+#rental:checked~.hide .track,
+#rental:checked~.hide .map,
+#rental:checked~.hide .support,
+
+
+#tour:checked~.hide .moto,
+#tour:checked~.hide .adventure,
+#tour:checked~.hide .gtcup,
+#tour:checked~.hide .odyssey,
+#tour:checked~.hide .rental,
+#tour:checked~.hide .trail,
+#tour:checked~.hide .track,
+#tour:checked~.hide .map,
+#tour:checked~.hide .support,
+
+
+#trail:checked~.hide .moto,
+#trail:checked~.hide .adventure,
+#trail:checked~.hide .gtcup,
+#trail:checked~.hide .odyssey,
+#trail:checked~.hide .rental,
+#trail:checked~.hide .tour,
+#trail:checked~.hide .track,
+#trail:checked~.hide .map,
+#trail:checked~.hide .support,
+
+
+#track:checked~.hide .moto,
+#track:checked~.hide .adventure,
+#track:checked~.hide .gtcup,
+#track:checked~.hide .odyssey,
+#track:checked~.hide .rental,
+#track:checked~.hide .tour,
+#track:checked~.hide .trail,
+#track:checked~.hide .map,
+#track:checked~.hide .support,
+
+
+#map:checked~.hide .moto,
+#map:checked~.hide .adventure,
+#map:checked~.hide .gtcup,
+#map:checked~.hide .odyssey,
+#map:checked~.hide .rental,
+#map:checked~.hide .tour,
+#map:checked~.hide .trail,
+#map:checked~.hide .track,
+#map:checked~.hide .support,
+
+
+#support:checked~.hide .moto,
+#support:checked~.hide .adventure,
+#support:checked~.hide .gtcup,
+#support:checked~.hide .odyssey,
+#support:checked~.hide .rental,
+#support:checked~.hide .tour,
+#support:checked~.hide .trail,
+#support:checked~.hide .track,
+#support:checked~.hide .map{
+  display: none;
+}
+
+/* #moto:checked~.hide.adventure{
+  display: block;
+}
+#moto:checked~.hide.adventure{
+  display: none;
+} */
+
+.hide {
+  width: 100%;
+  /* padding: 40px; */
+}
+
+.hide div {
+  width: 100%;
+}
+
+.hide img {
+  width: 100%;
+  object-fit: cover;
+  /* padding: 20px; */
+}
+
+.lists {
+  overflow: auto;
+}
+
+.lists .txt{
+  white-space: nowrap;
+  /* overflow: auto; */
+}           
+
+.fourth-nav{
+  width: 100%;
+  /* padding: 15px; */
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  /* margin-top: -50px; */
+}
+
+.apparel{
+  font-size: 30px;
+}
+
+.hidden {
+  width: 100%;
+}
+
+.hidden div {
+  width: 100%;
+}
+
+.hidden img {
+  width: 100%;
+  object-fit: cover;
+  /* padding: 20px; */
+}
+
+#shot:checked~.hidden .alpine,
+#shot:checked~.hidden .tcx,
+#shot:checked~.hidden .jacket,
+
+#alpine:checked~.hidden .shot,
+#alpine:checked~.hidden .tcx,
+#alpine:checked~.hidden .jacket,
+
+#tcx:checked~.hidden .shot,
+#tcx:checked~.hidden .alpine,
+#tcx:checked~.hidden .jacket,
+
+#jacket:checked~.hidden .shot,
+#jacket:checked~.hidden .alpine,
+#jacket:checked~.hidden .tcx{
+  display: none;
+}
+
+.fifth-nav{
+  width: 100%;
+  /* padding: 15px; */
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  /* margin-top: -50px; */
+}
+
+.access{
+  font-size: 30px;
+}
+
+.close {
+  width: 100%;
+}
+
+.close div {
+  width: 100%;
+}
+
+.close img {
+  width: 100%;
+  object-fit: cover;
+  /* padding: 20px; */
+}
+
+#genuine:checked~.close .make,
+#make:checked~.close .genuine{
+  display: none;
+}
+
+.sixth-nav{
+  width: 100%;
+  /* padding: 15px; */
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  /* margin-top: -50px; */
+}
+
+.locate{
+  font-size: 30px;
+}
+
+.find {
+  width: 100%;
+}
+
+.find div {
+  width: 100%;
+}
+
+.find img {
+  width: 100%;
+  object-fit: cover;
+  /* padding: 20px; */
+}
+
+#store:checked~.find .service,
+#store:checked~.find .disturb,
+#store:checked~.find .garage,
+
+#service:checked~.find .store,
+#service:checked~.find .disturb,
+#service:checked~.find .garage,
+
+#disturb:checked~.find .store,
+#disturb:checked~.find .service,
+#disturb:checked~.find .garage,
+
+#garage:checked~.find .store,
+#garage:checked~.find .service,
+#garage:checked~.find .disturb{
+  display: none;
+}
+
+.icon{
+  background-color: #ffffff;
+  width: 100%;
+  padding: 30px;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.icon p{
+  font-size: 15px;
+}
+
+.icon i{
+  font-size: 25px;
+}
+
+/* footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.foot {
+  background-color: #ffffff;
+  padding: 10px;
+  border-top: 1px solid ;
+  border-bottom: 1px solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.foot li{
+  list-style: none;
+}
+
+.foot li:hover{
+  color: red;
+}
+
+.foot ul{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media only screen and (min-width:300px) and (max-width:900px) {
+  .subnav {
+    position: fixed;
+    background-color: #000000;
+    left: 100%;
+    top: 60px;
+    width: 100%;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 50px;
+    align-items: center;
+    min-height: 67vh;
+    z-index: 999;
+    transition: all 1.8s;
+    /* transform: translate(0px); */
+  }
+
+  nav i {
+    position: relative;
+    font-size: 30px;
+    left: 10%;
+    display: unset !important;
+  }
+
+  .label-list {
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+
+  .motor,
+  .ride,
+  .apparel,
+  .access,
+  .locate{
+    font-size: 23px;
+  }
+
+  /* .picture {
+    width:200%;
+    display: flex;
+    aspect-ratio: 15/7;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overflow: hidden;
+  }
+  
+  
+  .picture~ .box-img {
+    object-fit: cover !important;
+    width: 100%;
+    height: 100%;
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    position: relative;
+  } */
+
+  .picture{
+    display: block;
+  }
+  
+  .picture h4{
+    bottom: 43px;
+  }
+
+  .box-img{
+    height:189px;
+  }
+
+  .icon{
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .icon > div{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+@media only screen and (min-width:300px) and (max-width:576px) {
+  .foot{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+@media only screen and (min-width:576px) and (max-width:992px) {
+  .foot{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+}
